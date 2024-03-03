@@ -20,7 +20,7 @@ To get started with the Rick and Morty project, clone the repository and install
 
 ```bash
 git clone // todo
-cd aspirity
+cd Rick-Morty
 npm install
 ```
 

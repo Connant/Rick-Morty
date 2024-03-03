@@ -1,0 +1,38 @@
+
+.mainItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+
+  &:hover {
+    .mainItemImg {
+      scale: 1.15;
+    }
+
+    &:first-child {
+      .mainItemImg {
+        rotate: -2deg;
+      }
+    }
+
+    &:last-child {
+      .mainItemImg {
+        rotate: 2deg;
+      }
+    }
+  }
+}
+
+.mainItemImg {
+  max-width: 350px;
+  transition: all 0.3s ease-out;
+  border-radius: 2px;
+}
+
+.mainTitle {
+  font-size: 56px;
+  line-height: 62px;
+  margin-top: 20px;
+}

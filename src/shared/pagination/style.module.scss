@@ -1,0 +1,28 @@
+
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.paginationButton {
+  padding: 5px;
+  transition: all 0.2s ease;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    scale: 1.2;
+  }
+
+  &:disabled {
+    svg path {
+      stroke: #8F8F8F;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+
+@font-face {
+    font-family: "Suisse Intl";
+    src: url("./fonts/SuisseIntl-Bold.ttf") format("ttf"),
+    url("./fonts/SuisseIntl-Bold.woff") format('woff');
+    font-weight: bold;
+    font-display: block;
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  src: url("./fonts/SuisseIntl-BoldItalic.ttf") format("ttf"),
+  url("./fonts/SuisseIntl-BoldItalic.woff") format('woff');
+  font-weight: bold;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  src: url("./fonts/SuisseIntl-Medium.woff") format("woff");
+  font-weight: 500;
+    font-style: normal;
+
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  src: url("./fonts/SuisseIntl-MediumItalic.woff") format("woff");
+  font-weight: 500;
+    font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  src: url("./fonts/SuisseIntl-Regular.woff") format("woff");
+  font-weight: normal;
+  font-display: block;
+}
+
+:root {
+    font-family: "Suisse Intl", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 133%;
+    font-weight: normal;
+
+    color-scheme: light dark;
+    color: #333;
+    background-color: #fff;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    font-weight: 500;
+    color: #2f4f4f;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #58982f;
+}
+
+
+
+h1 {
+    line-height: 1.1;
+}
+
+
+

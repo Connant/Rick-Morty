@@ -1,0 +1,41 @@
+.search {
+  position: relative;
+  // Другие стили для контейнера поиска
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  margin-bottom: 40px;
+
+  margin-top: -40px;
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  img {
+    width: 40px;
+  }
+}
+
+.searchInput {
+  width: 0;
+  background: transparent;
+  border: none;
+  border-radius: 1px;
+  border-bottom: 2px solid #333;
+  transition: width 0.5s ease;
+  margin-left: 10px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.searchInputActive {
+  width: 200px;
+  transition: width 0.5s ease;
+}
+

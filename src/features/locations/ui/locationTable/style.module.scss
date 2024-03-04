@@ -15,6 +15,12 @@
 
     &:hover {
       background-color: #F5F5F5;
+
+
+      .tableDataName {
+        color: #6ACF2A;
+        cursor: pointer;
+      }
     }
   }
 
@@ -24,7 +30,6 @@
     min-width: 60px;
 
     &Name {
-      color: #6ACF2A;
       font-weight: 500;
       font-style: normal;
 

@@ -36,7 +36,7 @@ const LocationTable = ({locations}: ILocationTable) => {
         </thead>
         <tbody className={s.tableBody}>
         {locations.map((location) => (
-          <tr className={`${s.tableRow} cursor-pointer`} key={location.id}>
+          <tr className={`${s.tableRow}`} key={location.id}>
             <td className={s.tableData}>{location.id}</td>
             <td className={`${s.tableData} ${s.tableDataName}`}
                 onClick={() => handleRowClick(location)}>{location.name}</td>

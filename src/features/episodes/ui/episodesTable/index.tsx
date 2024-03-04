@@ -36,7 +36,7 @@ const EpisodesTable = ({episodes}: ILocationTable) => {
         </thead>
         <tbody className={s.tableBody}>
         {episodes.map((episode) => (
-          <tr className={`${s.tableRow} cursor-pointer`} key={episode.id}>
+          <tr className={`${s.tableRow}`} key={episode.id}>
             <td className={s.tableData}>{episode.id}</td>
             <td className={`${s.tableData} ${s.tableDataName}`}
                 onClick={() => handleRowClick(episode)}>{episode.name}</td>

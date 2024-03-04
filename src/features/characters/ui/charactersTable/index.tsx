@@ -38,7 +38,7 @@ const CharactersTable = ({characters}: ICharactersTable) => {
         </thead>
         <tbody className={s.tableBody}>
         {characters.map((character) => (
-          <tr className={`${s.tableRow} cursor-pointer`} key={character.id} data-testid={`character-row-${character.id}`}>
+          <tr className={`${s.tableRow}`} key={character.id} data-testid={`character-row-${character.id}`}>
             <td data-testid={`character-id-${character.id}`} className={s.tableData}>{character.id}</td>
             <td data-testid={`character-name-${character.name}`} className={`${s.tableData} ${s.tableDataName}`}
                 onClick={() => handleRowClick(character)}>{character.name}</td>

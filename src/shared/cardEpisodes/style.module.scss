@@ -7,6 +7,12 @@
   border-radius: 4px;
   padding: 22px 18px;
 
+  &:hover {
+    .cardInsideTitle {
+      color: #6ACF2A;
+    }
+  }
+
   &Cover {
 
     &Image {
@@ -29,7 +35,6 @@
 
 
     &Title {
-      color: #6ACF2A;
       font-size: 30px;
       line-height: 38px;
 

@@ -29,7 +29,7 @@ const Layout = ({children}: ILayout) => {
 
   return (
     <div className={`${s.page} mx-auto`}>
-      <h1 className={s.title}><span className={s.span}>{`{`}</span> Rick and Morty<sup>Wiki</sup> <span
+      <h1 className={s.title}><span className={s.span}>{`{`}</span> Rick and Morty <sup>Wiki</sup> <span
         className={s.span}>{`}`}</span></h1>
       <nav className={s.navigation}>
         <ul className={s.navigationList}>

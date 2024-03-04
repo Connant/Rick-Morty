@@ -11,6 +11,7 @@
 
 .main {
     line-height: 133%;
+    margin-top: 40px;
 }
 
 .buttons {
@@ -18,11 +19,14 @@
     right: 20px;
     top: 300px;
     display: flex;
+    gap: 10px;
     justify-content: flex-end;
     align-items: center;
     z-index: 10;
     width: max-content;
     left: 100%;
+    border: 1px solid #333;
+    border-radius: 2px;
 
     background-color: #fff;
 
@@ -45,11 +49,11 @@
     }
 
     .viewToggle {
-        padding: 15px 5px 15px 15px;
+        padding: 15px;
     }
 
     .scroll {
-        padding: 16px 15px 15px;
+        padding: 16px 15px 15px 0;
     }
 }
 

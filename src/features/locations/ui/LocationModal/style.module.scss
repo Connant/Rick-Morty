@@ -116,10 +116,12 @@
 }
 
 .toggleResidentsButton {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #6ACF2A;
   border-radius: 0;
   background-color: transparent;
-  padding: 4px 6px;
+  padding: 4px 0;
+  font-weight: 500;
+  color: #6ACF2A;
 
   &:hover {
     border: none;

@@ -14,7 +14,6 @@ interface LocationsState {
   searchParams: {
     name: string;
   };
-  isFetching: boolean,
   isPageLoading: boolean,
 }
 
@@ -31,6 +30,5 @@ export const initialState: LocationsState = {
   searchParams: {
     name: '',
   },
-  isFetching: true,
   isPageLoading: false,
 };

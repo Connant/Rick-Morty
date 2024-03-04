@@ -19,14 +19,11 @@ const Layout = ({children}: ILayout) => {
   const renderNavigationLinks = () => {
     return navigationLinks.map(link => {
       const isActive = location.pathname === link.path;
-      if (!isActive) {
         return (
-          <li key={link.name} className={s.navigationItem}>
+          <li key={link.name} className={`${s.navigationItem} ${isActive ? s.navigationItemActive : ''}`}>
             <Link to={link.path}>{link.name}</Link>
           </li>
         );
-      }
-      return null;
     });
   };
 

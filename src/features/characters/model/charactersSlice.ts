@@ -9,7 +9,6 @@ const charactersSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getCharacters.pending, (state) => {
       state.loading = 'pending';
-      state.isFetching = true;
       state.isPageLoading = true;
     });
     builder.addCase(getCharacters.fulfilled, (state, action) => {
@@ -21,13 +20,11 @@ const charactersSlice = createSlice({
         next: action.payload.pageInfo.next,
         prev: action.payload.pageInfo.prev,
       };
-      state.isFetching = false;
       state.isPageLoading = false;
     });
     builder.addCase(getCharacters.rejected, (state, action) => {
       state.loading = 'failed';
       state.error = action.error.message || null;
-      state.isFetching = false;
       state.isPageLoading = false;
     });
     builder.addCase(searchCharactersByName.fulfilled, (state, action) => {
@@ -40,7 +37,6 @@ const charactersSlice = createSlice({
         next: action.payload.pageInfo.next,
         prev: action.payload.pageInfo.prev,
       };
-      state.isFetching = false;
     });
     builder.addCase(searchCharactersByName.rejected, (state, action) => {
       state.loading = 'failed';
@@ -57,7 +53,6 @@ const charactersSlice = createSlice({
         next: action.payload.pageInfo.next,
         prev: action.payload.pageInfo.prev,
       };
-      state.isFetching = false;
       state.isPageLoading = false;
     });
   }

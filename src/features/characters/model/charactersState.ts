@@ -13,7 +13,6 @@ interface CharactersState {
   searchParams: {
     name: string;
   };
-  isFetching: boolean,
   isPageLoading: boolean,
 }
 
@@ -30,6 +29,5 @@ export const initialState: CharactersState = {
   searchParams: {
     name: '',
   },
-  isFetching: true,
   isPageLoading: false,
 };

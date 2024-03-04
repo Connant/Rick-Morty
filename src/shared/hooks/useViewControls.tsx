@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 const useViewControls = (defaultView: 'grid view' | 'table view' = 'table view') => {
-  // Инициализируем состояние view из localStorage, если там есть сохранённое значение
   const [view, setView] = useState<'grid view' | 'table view'>(
     localStorage.getItem('view') as 'grid view' | 'table view' || defaultView
   );
@@ -10,7 +9,7 @@ const useViewControls = (defaultView: 'grid view' | 'table view' = 'table view')
   const handleChangeView = () => {
     const nextView = view === 'table view' ? 'grid view' : 'table view';
     setView(nextView);
-    localStorage.setItem('view', nextView); // Сохраняем изменения в localStorage
+    localStorage.setItem('view', nextView);
     window.scrollTo(0, 0);
   };
 
@@ -32,7 +31,6 @@ const useViewControls = (defaultView: 'grid view' | 'table view' = 'table view')
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
-    // Возможно также нужно будет обновить состояние, если значение в localStorage изменилось
     const handleStorageChange = () => {
       const storedView = localStorage.getItem('view');
       if (storedView) {

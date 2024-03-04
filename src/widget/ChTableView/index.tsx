@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {getCharactersByPage, searchCharactersByName} from "@features/characters/model/charactersThunks.ts";
 import Search from "@shared/search";
-import CharactersTable from "@shared/charactersTable";
 import Pagination from "@shared/pagination";
 import {useAppDispatch, useAppSelector} from "@app/store.ts";
+import CharactersTable from "@features/characters/ui/charactersTable";
 
 
 const ChTableView: React.FC = () => {

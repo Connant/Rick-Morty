@@ -9,7 +9,6 @@ const episodesSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getEpisodes.pending, (state) => {
       state.loading = 'pending';
-      state.isFetching = true;
       state.isPageLoading = true;
     });
     builder.addCase(getEpisodes.fulfilled, (state, action) => {
@@ -21,13 +20,11 @@ const episodesSlice = createSlice({
         next: action.payload.pageInfo.next,
         prev: action.payload.pageInfo.prev,
       };
-      state.isFetching = false;
       state.isPageLoading = false;
     });
     builder.addCase(getEpisodes.rejected, (state, action) => {
       state.loading = 'failed';
       state.error = action.error.message || null;
-      state.isFetching = false;
       state.isPageLoading = false;
     });
     builder.addCase(searchEpisodesByName.fulfilled, (state, action) => {
@@ -40,13 +37,11 @@ const episodesSlice = createSlice({
         next: action.payload.pageInfo.next,
         prev: action.payload.pageInfo.prev,
       };
-      state.isFetching = false;
     });
     builder.addCase(searchEpisodesByName.rejected, (state, action) => {
       state.loading = 'failed';
       state.error = action.error.message || 'No episodes found';
       state.entities = [];
-      state.isFetching = false;
     });
     builder.addCase(getEpisodesByPage.fulfilled, (state, action) => {
       state.loading = 'succeeded';
@@ -57,7 +52,6 @@ const episodesSlice = createSlice({
         next: action.payload.pageInfo.next,
         prev: action.payload.pageInfo.prev,
       };
-      state.isFetching = false;
       state.isPageLoading = false;
     });
   }

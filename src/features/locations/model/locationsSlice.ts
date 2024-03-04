@@ -9,7 +9,6 @@ const locationsSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getLocation.pending, (state) => {
       state.loading = 'pending';
-      state.isFetching = true;
       state.isPageLoading = true;
     });
     builder.addCase(getLocation.fulfilled, (state, action) => {
@@ -21,14 +20,12 @@ const locationsSlice = createSlice({
         next: action.payload.pageInfo.next,
         prev: action.payload.pageInfo.prev,
       };
-      state.isFetching = false;
       state.isPageLoading = false;
     });
     builder.addCase(getLocation.rejected, (state, action) => {
       state.loading = 'failed';
       state.error = action.error.message || null;
       state.entities = [];
-      state.isFetching = false;
       state.isPageLoading = false;
     });
     builder.addCase(searchLocationByName.fulfilled, (state, action) => {
@@ -41,7 +38,6 @@ const locationsSlice = createSlice({
         next: action.payload.pageInfo.next,
         prev: action.payload.pageInfo.prev,
       };
-      state.isFetching = false;
     });
     builder.addCase(searchLocationByName.rejected, (state, action) => {
       state.loading = 'failed';
@@ -57,7 +53,6 @@ const locationsSlice = createSlice({
         next: action.payload.pageInfo.next,
         prev: action.payload.pageInfo.prev,
       };
-      state.isFetching = false;
       state.isPageLoading = false;
     });
   }

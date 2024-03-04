@@ -1,4 +1,3 @@
-import React from 'react';
 import ArrowPic from './arrow.svg';
 
 type ViewControlsProps = {
@@ -8,12 +7,7 @@ type ViewControlsProps = {
   onScrollTop: () => void;
 };
 
-const ViewControls: React.FC<ViewControlsProps> = ({
-                                                     currentView,
-                                                     showScrollTop,
-                                                     onChangeView,
-                                                     onScrollTop,
-                                                   }) => {
+const ViewControls = ({currentView, showScrollTop, onChangeView, onScrollTop}: ViewControlsProps) => {
   return (
     <div className='buttons'>
       <button className='viewToggle' onClick={onChangeView}>
@@ -21,7 +15,7 @@ const ViewControls: React.FC<ViewControlsProps> = ({
       </button>
       {showScrollTop && (
         <button className='scroll' onClick={onScrollTop}>
-          <img src={ArrowPic} alt='scroll top' />
+          <img src={ArrowPic} alt='scroll top'/>
         </button>
       )}
     </div>

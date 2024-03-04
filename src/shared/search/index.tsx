@@ -7,7 +7,7 @@ interface ISearch {
   onSearch: (query: string) => void;
 }
 
-const Search: React.FC<ISearch> = ({searchQuery, onSearch}) => {
+const Search = ({searchQuery, onSearch}: ISearch) => {
   const [isInputVisible, setInputVisible] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {

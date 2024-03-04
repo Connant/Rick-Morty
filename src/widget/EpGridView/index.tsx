@@ -45,7 +45,7 @@ const EpGridView: React.FC = () => {
 
   return (
     <div className='main mx-auto'>
-      <ul className='grid grid-cols-4 gap-x-5 gap-y-10'>
+      <ul className='grid mt-10 grid-cols-4 gap-x-5 gap-y-10'>
         {episodes.map((episode) => (
           <CardEpisodes episodes={episode} key={episode.id}/>
         ))}

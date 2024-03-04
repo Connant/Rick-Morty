@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect} from "react";
-import {useAppDispatch, useAppSelector} from "@features/characters/model/hooks.ts";
 import {getCharacters} from "@features/characters/model/charactersThunks.ts";
-import Card from "@shared/card";
+import {useAppDispatch, useAppSelector} from "@app/store.ts";
+import CardCharacter from "@shared/cardCharacter";
 
 
 const ChGridView: React.FC = () => {
@@ -37,9 +37,7 @@ const ChGridView: React.FC = () => {
   }, [onScroll]);
 
   useEffect(() => {
-    const savedPage = localStorage.getItem('currentPage');
-    const pageToLoad = savedPage ? parseInt(savedPage) : 1;
-    dispatch(getCharacters(pageToLoad));
+    dispatch(getCharacters(1));
   }, [dispatch]);
 
 
@@ -47,7 +45,7 @@ const ChGridView: React.FC = () => {
     <div className='main mx-auto'>
       <ul className='grid grid-cols-4 gap-x-5 gap-y-10'>
         {characters.map((character) => (
-          <Card character={character} key={character.id}/>
+          <CardCharacter character={character} key={character.id}/>
         ))}
       </ul>
 

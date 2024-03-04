@@ -1,19 +1,19 @@
 import {format} from "date-fns";
 import s from './style.module.scss'
 import {useState} from "react";
-import {Character} from "@shared/types/characters/types.ts";
+import {ICharacter} from "@shared/types/characters/types.ts";
 import CharacterModal from "@features/characters/ui/CharacterModal";
 
 interface ICharactersTable {
-  characters: Character[]
+  characters: ICharacter[]
 }
 
 const CharactersTable = ({characters}: ICharactersTable) => {
 
-  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
+  const [selectedCharacter, setSelectedCharacter] = useState<ICharacter | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleRowClick = (character: Character) => {
+  const handleRowClick = (character: ICharacter) => {
     setSelectedCharacter(character);
     setIsModalOpen(true);
   };
@@ -38,9 +38,9 @@ const CharactersTable = ({characters}: ICharactersTable) => {
         </thead>
         <tbody className={s.tableBody}>
         {characters.map((character) => (
-          <tr className={`${s.tableRow} cursor-pointer`} key={character.id}>
-            <td className={s.tableData}>{character.id}</td>
-            <td className={`${s.tableData} ${s.tableDataName}`}
+          <tr className={`${s.tableRow} cursor-pointer`} key={character.id} data-testid={`character-row-${character.id}`}>
+            <td data-testid={`character-id-${character.id}`} className={s.tableData}>{character.id}</td>
+            <td data-testid={`character-name-${character.name}`} className={`${s.tableData} ${s.tableDataName}`}
                 onClick={() => handleRowClick(character)}>{character.name}</td>
             <td className={s.tableData}>{character.status}</td>
             <td className={s.tableData}><a href={character.origin.url}>{character.origin.name}</a></td>

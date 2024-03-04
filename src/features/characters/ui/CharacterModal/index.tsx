@@ -1,20 +1,19 @@
-import {FC, useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import s from './style.module.scss';
 import {format} from "date-fns";
-import ClosePic from './close.svg'
-import {Character} from "../../../../shared/types/characters/types.ts";
+import ClosePic from '@shared/assets/close.svg'
+import {ICharacter} from "@shared/types/characters/types.ts";
 
 interface CharacterModalProps {
-  character: Character;
+  character: ICharacter;
   isOpen: boolean;
   onClose: () => void;
 }
 
-const CharacterModal: FC<CharacterModalProps> = ({character, isOpen, onClose}) => {
+const CharacterModal = ({character, isOpen, onClose}: CharacterModalProps) => {
   const [showAll, setShowAll] = useState<boolean>(false);
   const modalRoot = document.getElementById('modal-root') as HTMLElement;
-  // Если нет элемента для рендеринга модального окна, добавляем его
   if (!modalRoot) {
     const el = document.createElement('div');
     el.id = 'modal-root';
@@ -22,14 +21,12 @@ const CharacterModal: FC<CharacterModalProps> = ({character, isOpen, onClose}) =
   }
 
   useEffect(() => {
-    // Закрыть модальное окно при нажатии клавиши Escape
     const handleKeyUp = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
 
     window.addEventListener('keyup', handleKeyUp);
 
-    // Предотвращение прокрутки основного содержимого документа
     if (isOpen) {
       document.body.classList.add(s.bodyNoScroll);
     } else {
@@ -39,7 +36,6 @@ const CharacterModal: FC<CharacterModalProps> = ({character, isOpen, onClose}) =
 
     return () => {
       window.removeEventListener('keyup', handleKeyUp);
-      // Удаление класса при размонтировании компонента
       document.body.classList.remove(s.bodyNoScroll);
     };
   }, [isOpen, onClose]);
@@ -56,10 +52,10 @@ const CharacterModal: FC<CharacterModalProps> = ({character, isOpen, onClose}) =
   const episodeNumber = (url: string) => url.split('/').pop();
 
   const modalContent = (
-    <div className={s.modalOverlay} onClick={onClose}>
+    <div data-testid="character-modal" className={s.modalOverlay} onClick={onClose}>
       <div className={s.modalContent} onClick={e => e.stopPropagation()}>
         <div className={s.modalHeader}>
-          <button className={s.modalClose} onClick={onClose}>
+          <button data-testid="close-modal" className={s.modalClose} onClick={onClose}>
             <img src={ClosePic} alt='Close modal'/>
           </button>
         </div>

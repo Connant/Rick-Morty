@@ -1,9 +1,9 @@
 import s from "./style.module.scss";
-import {Info} from "@shared/types/characters/types.ts";
+import {IInfo} from "@shared/types/common/types.ts";
 
 
 interface IPagination {
-  pageInfo: Info
+  pageInfo: IInfo
   currentPage: number
   loading: string
   setCurrentPage: (value: (((prevState: number) => number) | number)) => void

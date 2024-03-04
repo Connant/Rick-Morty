@@ -5,6 +5,7 @@ import MainPage from "../pages/MainPage";
 import CharactersPage from "../pages/CharactersPage";
 import LocationPage from "../pages/LocationPage";
 import './App.css';
+import EpisodesPage from "@pages/EpisodesPage";
 
 
 const App: React.FC = () => {
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/characters" element={<CharactersPage />} />
           <Route path="/locations" element={<LocationPage />} />
+          <Route path="/episodes" element={<EpisodesPage />} />
         </Routes>
       </Layout>
     </Router>

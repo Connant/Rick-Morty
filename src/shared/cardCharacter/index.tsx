@@ -1,12 +1,12 @@
 import {format} from "date-fns";
 import s from './style.module.scss'
-import {Character} from "@shared/types/characters/types.ts";
+import {ICharacter} from "@shared/types/characters/types.ts";
 
 interface ICard {
-  character: Character
+  character: ICharacter
 }
 
-const Card = ({character}: ICard) => {
+const CardCharacter = ({character}: ICard) => {
 
   return (
     <li className={s.card}>
@@ -17,7 +17,6 @@ const Card = ({character}: ICard) => {
       </div>
 
       <div className={s.cardInside}>
-        {/*<img className={s.cardInsideImage} src={character.image} alt={`${character.name} photo`} />*/}
 
         <h4 className={`${s.cardInsideTitle} text-left mt-5`}>{character.name} <sup>{character.gender}</sup></h4>
         <ul className={`${s.cardInsideList} flex flex-col items-start text-left gap-1.5 mt-2.5`}>
@@ -46,4 +45,4 @@ const Card = ({character}: ICard) => {
   )
 };
 
-export default Card;
+export default CardCharacter;

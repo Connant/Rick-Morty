@@ -1,7 +1,7 @@
-import {Character} from "@shared/types/characters/types.ts";
+import {ICharacter} from "@shared/types/characters/types.ts";
 
 interface CharactersState {
-  entities: Character[];
+  entities: ICharacter[];
   loading: 'idle' | 'pending' | 'succeeded' | 'failed';
   error: string | null;
   pageInfo: {

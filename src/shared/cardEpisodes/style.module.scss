@@ -1,0 +1,111 @@
+.card {
+  position: relative;
+
+  transition: max-height 3s cubic-bezier(1, 0, 1, 0);
+
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 22px 18px;
+
+  &Cover {
+
+    &Image {
+      border-radius: 2px;
+      transition: max-height 3s cubic-bezier(1, 0, 1, 0);
+
+    }
+
+    &Titile {
+      font-size: 34px;
+    }
+  }
+
+  &Inside {
+
+    position: absolute;
+    top: 76px;
+    opacity: 0;
+    transition: max-height 3s cubic-bezier(1, 0, 1, 0);
+
+
+    &Title {
+      color: #6ACF2A;
+      font-size: 30px;
+      line-height: 38px;
+
+      sup {
+        color: rgba(51, 51, 51, 0.2);
+        font-size: 16px;
+      }
+    }
+
+    &Image {
+      border-radius: 2px;
+      width: 120px;
+      height: auto;
+    }
+
+    &ListItem {
+      span {
+        color: rgba(51, 51, 51, 0.2);
+
+      }
+    }
+  }
+}
+
+.card:hover {
+  //opacity: 0;
+  transition: max-height 3s cubic-bezier(1, 0, 1, 0);
+
+  .avatar {
+    border-radius: 2px;
+    width: 86px;
+    transition: max-height 3s cubic-bezier(1, 0, 1, 0);
+
+  }
+
+  .cardTitle {
+    opacity: 0;
+    margin-top: 215px;
+  }
+
+  .cardInside {
+    opacity: 1;
+    transition: max-height 3s cubic-bezier(1, 0, 1, 0);
+
+  }
+}
+
+.cardInsideListItemResident {
+  position: relative;
+
+  .residentList {
+    display: none;
+
+    li {
+      width: 135px;
+
+    }
+  }
+
+  &:hover {
+
+    cursor: pointer;
+
+    .residentList {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      flex-wrap: wrap;
+      position: absolute;
+      row-gap: 10px;
+      column-gap: 20px;
+      box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      padding: 22px 18px;
+      background-color: #fff;
+      width: max-content;
+      z-index: 999;
+    }
+  }
+}

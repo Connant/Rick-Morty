@@ -13,6 +13,7 @@ const Layout = ({children}: ILayout) => {
     {path: "/", name: "Main"},
     {path: "/characters", name: "Characters"},
     {path: "/locations", name: "Locations"},
+    {path: "/episodes", name: "Episodes"},
   ];
 
   const renderNavigationLinks = () => {
@@ -25,7 +26,7 @@ const Layout = ({children}: ILayout) => {
           </li>
         );
       }
-      return null; // Если активен, возвращаем null
+      return null;
     });
   };
 

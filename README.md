@@ -1,5 +1,6 @@
 
 # Rick and Morty Project
+Only desktop version
 
 ## Overview
 

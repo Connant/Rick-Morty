@@ -20,11 +20,13 @@ const Search: React.FC<ISearch> = ({searchQuery, onSearch}) => {
 
   return (
     <div className={s.search}>
-      <button className={s.searchButton} onClick={toggleInputVisibility}>
+      <button id='searchButton' className={s.searchButton} onClick={toggleInputVisibility}>
         <img src={SearchPic} alt='Search icon'/>
       </button>
 
       <input
+        id="searchInput"
+        data-testid="searchInput"
         className={`${s.searchInput} ${isInputVisible ? s.searchInputActive : ''}`}
         type="text"
         value={searchQuery}

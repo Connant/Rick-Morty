@@ -1,9 +1,10 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {Character, Info} from "@shared/types/characters/types.ts";
-import {fetchCharacters, fetchCharactersByName} from "@features/characters/lib/rickAndMortyAPI.ts";
+import {ICharacter} from "@shared/types/characters/types.ts";
+import {fetchCharacters, fetchCharactersByName} from "@features/characters/lib/charactersAPI.ts";
+import {IInfo} from "@shared/types/common/types.ts";
 
 export const getCharacters = createAsyncThunk<
-  { characters: Character[]; pageInfo: Info },
+  { characters: ICharacter[]; pageInfo: IInfo },
   number,
   {
     rejectValue: string
@@ -26,7 +27,7 @@ export const getCharacters = createAsyncThunk<
 
 
 export const searchCharactersByName = createAsyncThunk<
-  { characters: Character[]; pageInfo: Info },
+  { characters: ICharacter[]; pageInfo: IInfo },
   { name: string; page: number },
   { rejectValue: string }
 >(
@@ -48,7 +49,7 @@ export const searchCharactersByName = createAsyncThunk<
 );
 
 export const getCharactersByPage = createAsyncThunk<
-  { characters: Character[]; pageInfo: Info },
+  { characters: ICharacter[]; pageInfo: IInfo },
   number,
   { rejectValue: string }
 >(
